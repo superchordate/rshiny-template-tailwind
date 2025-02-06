@@ -1,16 +1,13 @@
-<!-- Claude helped me write this! -->
 <nav style="background-color: #bc5f6a;">
-    <!-- screen menu -->
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-between h-16">
             <div class="hidden md:block">
                 <div class="flex items-center space-x-4">
-                    <a href="#" onclick="setTab('mtcars')" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">mtcars</a>
-                    <a href="#" onclick="setTab('states')" class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white">states</a>
+                    <a href="#" onclick="setTab('mtcars')" class="nav-link active" data-tab="mtcars">mtcars</a>
+                    <a href="#" onclick="setTab('states')" class="nav-link" data-tab="states">states</a>
                 </div>
             </div>
             <div class="md:hidden">
-                <!-- menu toggle button on mobile -->
                 <button type="button" onclick="toggleMenu()" class="text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -19,21 +16,48 @@
             </div>
         </div>
     </div>
-    <!-- mobile menu -->
     <div class="hidden md:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#" onclick="setTab('mtcars')" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">mtcars</a>
-            <a href="#" onclick="setTab('states')" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-white">states</a>
+            <a href="#" onclick="setTab('mtcars')" class="nav-link active" data-tab="mtcars">mtcars</a>
+            <a href="#" onclick="setTab('states')" class="nav-link" data-tab="states">states</a>
         </div>
     </div>
 </nav>
+
+<style>
+.nav-link {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #D1D5DB;
+}
+
+.nav-link:hover {
+    background-color: #374151;
+    color: white;
+}
+
+.nav-link.active {
+    background-color: #374151;
+    color: white;
+}
+</style>
+
 <script>
-    function toggleMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-    }
-    // https://shiny.posit.co/r/articles/build/communicating-with-js/
-    function setTab(value) {
-        Shiny.setInputValue('tab', value);
-    }
+function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+}
+
+function setTab(value) {
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        link.classList.remove('active');
+        if(link.dataset.tab === value) {
+            link.classList.add('active');
+        }
+    });
+    Shiny.setInputValue('tab', value);
+}
 </script>
