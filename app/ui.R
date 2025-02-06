@@ -17,8 +17,8 @@ ui = function(...) htmlTemplate(
     files.www =  gsub('www/', '', list.files( 'www', full.names = TRUE, recursive = TRUE))
     files.css = files.www[grepl('[.]css$', files.www, ignore.case = TRUE )]
     files.js = files.www[grepl('[.]js$', files.www, ignore.case = TRUE )]
-    for(icss in files.css ) ihead[[length(ihead) + 1]] = HTML(cc('<link rel="stylesheet" type="text/css" href="', icss, '">'))
-    for(ijs in files.js) ihead[[length(ihead) + 1]] = HTML(cc('<script src="', ijs, '"></script>'))
+    for(icss in files.css ) ihead[[length(ihead) + 1]] = HTML(paste0('<link rel="stylesheet" type="text/css" href="', icss, '">'))
+    for(ijs in files.js) ihead[[length(ihead) + 1]] = HTML(paste0('<script src="', ijs, '"></script>'))
     
     return(ihead)
     

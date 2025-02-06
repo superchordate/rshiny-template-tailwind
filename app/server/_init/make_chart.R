@@ -3,7 +3,7 @@ make_chart_labels = c() # we'll add to this later.
 make_chart_label = function(x) if(x %in% names(make_chart_labels)) make_chart_labels[[x]] else x
 
 make_chart_colors = c() # we'll add to this later. 
-make_chart_color = function(x, y) if(cc(x, y) %in% names(make_chart_colors)) make_chart_colors[[cc(x, y)]] else '#000000'
+make_chart_color = function(x, y) if(paste0(x, y) %in% names(make_chart_colors)) make_chart_colors[[paste0(x, y)]] else '#000000'
 
 # function for easily creating charts. 
 make_chart = function(dt, x, y){
@@ -15,7 +15,7 @@ make_chart = function(dt, x, y){
 
   return(list(
       chart = list(type = 'scatter'),
-      title = list(text = cc(labels, sep = ' vs. ')),
+      title = list(text = paste0(labels, collapse = ' vs. ')),
       xAxis = list(title = list(text = labels[1], enabled = TRUE)),
       yAxis = list(title = list(text = labels[2], enabled = TRUE), labels = list(enabled = TRUE)),
       # tooltip = list(format = list(fontSize = '10px')),
