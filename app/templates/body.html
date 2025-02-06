@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    {{ headContent() }}
+    {{ import_www() }}
+    <meta name="description" content="A demo showcasing the integration of R Shiny with Tailwind CSS, demonstrating modern web development practices in R.">
+    <title>{{ app_title }}</title>
+  </head>
+  <body style="background-color: #E3A4A5;">
+    {{ htmlTemplate("templates/navbar.html") }}
+    <div class="h-full opensans text-gray-600" style="max-width: 2000px; margin: 0 auto;">
+        <main class="px-4 py-6">
+            <div>
+                {{ htmlTemplate("templates/mtcars.html") }}
+            </div>
+        </main>
+    </div>
+    {{ htmlTemplate("templates/note.html") }}
+  </body>
+</html>

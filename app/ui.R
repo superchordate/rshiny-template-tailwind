@@ -1,4 +1,11 @@
-uihead = function(){
+# app settings.
+# best put here so shiny knows to reload when they change (changes to global.R won't trigger reloads).
+app_title = 'R Shiny + Tailwind CSS'
+
+ui = function(...) htmlTemplate(
+  'templates/body.html', 
+  app_title = app_title, 
+  import_www = function(){
 
     ihead = list(
         # Google fonts. Left here just in case - but it's better if you add these locally to www/.
@@ -15,38 +22,4 @@ uihead = function(){
     
     return(ihead)
     
-}
-
-# set up your tabs here. 
-tabs = lapply(c(
-  'Home'
-  ), function(tab) tabPanel(title = tab, uiOutput(tab))
-)
-#tabs$selected = 'Make a Chart' # uncomment to set a default tab during developmnet. 
-
-ui = function(...) div(
-  
-  # utility items. 
-  div(
-    tags$title('R Shiny + Tailwind CSS'),
-    uihead(),
-  ),
-
-  # app container.
-  div(class = 'h-lvh opensans bg-gray-50 text-gray-600',
-    div(
-      class = 'sticky top-0 z-50', 
-
-      # header
-      div(class = 'h-20 flex flex-wrap content-center bg-white drop-shadow-md pl-6',
-        h1(class = 'opensans-bold text-xl', 'R Shiny + Tailwind CSS')
-      ),
-      
-      div(
-        class = 'h-full mb-4', 
-        uiOutput('Home')
-      )
-  )
-
-))
-
+})

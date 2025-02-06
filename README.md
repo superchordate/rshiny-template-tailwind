@@ -19,6 +19,10 @@ Instead of writing CSS, you apply pre-built, atomic-ish classes directly to your
 
 This provides more flexibility than an opinionated framework like Bootstrap, at the cost of more complex and repetitive classing.
 
+Tailwind CSS is also mobile-first, making it intuitive and easy to design responsible applications. More info on this at https://tailwindcss.com/docs/responsive-design.
+
+> Don't know Tailwind CSS? Claude and ChatGPT are very good at writing HTML with Tailwind CSS for any component, which you can then translate to an `htmlTemplate`.
+
 
 ## About this Project
 
@@ -61,4 +65,16 @@ This template uses a system I've set up to make complex R Shiny projects easier 
 * `global.R`, `server.R`, and `ui.R` each have functions that will automatically read in files saved in folders within `app/` with the same name (`app/global/`, `app/server/`, `app/ui/`).
 * `ui.R` only handles high-level elements, while most of the UI is built using server files saved in the `app/server/` folder. 
 * I use Visual Studio Code to navigate the files and folder structure. In my experience, VS Code is better than RStudio for working with complex projects. `Ctrl+P` is a lifesaver! I still use RStudio to run code and debug with `browser()`, though. 
+
+**hcslim**
+
+This project uses [hcslim](https://github.com/superchordate/hcslim/) to utilize Highcharts for plotting. 
+
+* Charting defaults are set at `app/www/highcharts-defaults.js`.
+* Highcharts .js files are at `app/www/highcharts`. You can add/remove modules here. 
+* hcslim functions are at `app/server/_init/hcslim.R`
+
+**HTML Templates**
+
+When breaking free of opinionated frameworks, it is much easier to write UI in HTML. This project uses HTML templates, saved in the `app/templates/` folder. More on this at https://shiny.posit.co/r/articles/build/templates/.
 

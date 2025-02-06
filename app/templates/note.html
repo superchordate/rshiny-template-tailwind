@@ -1,0 +1,34 @@
+<!-- Claude helped me write this! -->
+<div id="note-container" class="fixed bottom-4 right-0 m-4 z-50 opacity-75">
+    <!-- toggle button -->
+    <button onclick="toggleNote()" class="md:hidden bg-yellow-200 p-3 rounded-full shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div id="note" class="hidden md:block bg-yellow-200 p-4 rounded-lg shadow-lg max-w-sm">
+        <div class="flex justify-between items-start">
+            <h3 class="font-bold">Note</h3>
+            <!-- close button -->
+            <button onclick="closeNote()" class="text-gray-500 hover:text-gray-700">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <p class="text-sm mt-2">
+            Code @ <a href="https://github.com/superchordate/rshiny-template-tailwind" target="_blank" class="underline">Github</a>
+            <br/>Try resizing and on mobile.
+        </p>
+    </div>
+</div>
+<script>
+    function toggleNote() {
+        const note = document.getElementById('note');
+        note.classList.toggle('hidden');
+    }
+    function closeNote() {
+        const note = document.getElementById('note-container');
+        note.classList.add('invisible');
+    }
+</script>
