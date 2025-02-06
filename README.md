@@ -30,9 +30,13 @@ This repo contains a working R Shiny app that uses Tailwind. You can use it to t
 
 I'm hoping the code will be intuitive if you are familiar with R Shiny. If you aren't familiar, start at the [Tutorial](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) instead. 
 
-To use it, clone or download the files and run the app using RStudio. 
+To use it, clone or download the files and run the app using RStudio:
 
-![Screenshot of the R Shiny Template App](https://github.com/superchordate/rshiny-template-tailwind/blob/main/img/screenshot.jpg)
+![Screenshot of the R Shiny Template app.](https://github.com/superchordate/rshiny-template-tailwind/blob/main/img/screenshot.jpg)
+
+The template is mobile-friendly:
+
+![Screenshot of the R Shiny Template app on a mobile phone.](https://github.com/superchordate/rshiny-template-tailwind/blob/main/img/screenshot-mobile.jpg)
 
 > The app is very simple, just a basic start. If you'd like to see a more mature app that uses this design, go to https://shinydemo.brycechamberlainllc.com.
 
