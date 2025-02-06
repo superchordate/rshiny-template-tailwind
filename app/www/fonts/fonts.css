@@ -1,0 +1,34 @@
+/* import fonts from files */
+@font-face {
+    font-family: 'opensans-light';
+    src: url('OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'opensans';
+    src: url('OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'opensans-italic';
+    src: url('OpenSans-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'opensans-medium';
+    src: url('OpenSans-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'opensans-bold';
+    src: url('OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'opensans-extrabold';
+    src: url('OpenSans-ExtraBold.ttf') format('truetype');
+}
+
+
+/* set up CSS classes for use in Tailwind */
+.opensans-light { font-family: 'opensans-light'; }
+.opensans { font-family: 'opensans'; }
+.opensans-italic { font-family: 'opensans-italic'; }
+.opensans-medium { font-family: 'opensans-medium'; }
+.opensans-bold { font-family: 'opensans-bold'; }
+.opensans-extrabold { font-family: 'opensans-extrabold'; }
