@@ -9,7 +9,9 @@ https://www.brycechamberlainllc.com
 ## What is Tailwind?
 
 Tailwind CSS is a utility-first framework that provides low-level utility classes to build designs directly in your HTML. 
-Instead of writing CSS, you apply pre-built, atomic-ish classes directly to your elements. For example:
+Instead of writing CSS, you apply pre-built, atomic-ish classes directly to your elements. 
+
+For example:
 
 ```html
 <div class="flex items-center bg-blue-500 text-white p-4 rounded-lg shadow-md">
@@ -19,7 +21,7 @@ Instead of writing CSS, you apply pre-built, atomic-ish classes directly to your
 
 This provides more flexibility than an opinionated framework like Bootstrap, at the cost of more complex and repetitive classing.
 
-Tailwind CSS is also mobile-first, making it intuitive and easy to design responsible applications. More info on this at https://tailwindcss.com/docs/responsive-design.
+Tailwind CSS is mobile-first, making it intuitive and easy to design responsible applications. More info on this at https://tailwindcss.com/docs/responsive-design.
 
 > Don't know Tailwind CSS? Claude and ChatGPT are very good at writing HTML with Tailwind CSS for any component, which you can then translate to an `htmlTemplate`.
 
