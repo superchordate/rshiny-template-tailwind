@@ -1,12 +1,12 @@
 <!-- Claude helped me write this! -->
 <nav style="background-color: #bc5f6a;">
+    <!-- screen menu -->
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-between h-16">
             <div class="hidden md:block">
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">mtcars</a>
-                    <!-- <a href="#" class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white">Tab 2</a>
-                    <a href="#" class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white">Tab 3</a> -->
+                    <a href="#" onclick="setTab('mtcars')" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">mtcars</a>
+                    <a href="#" onclick="setTab('states')" class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white">states</a>
                 </div>
             </div>
             <div class="md:hidden">
@@ -19,11 +19,11 @@
             </div>
         </div>
     </div>
+    <!-- mobile menu -->
     <div class="hidden md:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Tab 1</a>
-            <a href="#" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-white">Tab 2</a>
-            <a href="#" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-white">Tab 3</a>
+            <a href="#" onclick="setTab('mtcars')" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">mtcars</a>
+            <a href="#" onclick="setTab('states')" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-white">states</a>
         </div>
     </div>
 </nav>
@@ -31,5 +31,9 @@
     function toggleMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+    }
+    // https://shiny.posit.co/r/articles/build/communicating-with-js/
+    function setTab(value) {
+        Shiny.setInputValue('tab', value);
     }
 </script>

@@ -11,58 +11,30 @@
 #  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
 #  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
 
-# function for easily creating charts. 
-mtcars_chart = function(x, y){
-
-  idt = mtcars[, c(x, y)]
-  
-  colnames(idt) = c('x', 'y')
-  labels = c(mcars_lables[[x]], mcars_lables[[y]])
-
-  return(list(
-      chart = list(type = 'scatter'),
-      title = list(text = cc(labels, sep = ' vs. ')),
-      xAxis = list(title = list(text = labels[1], enabled = TRUE)),
-      yAxis = list(title = list(text = labels[2], enabled = TRUE), labels = list(enabled = TRUE)),
-      # tooltip = list(format = list(fontSize = '10px')),
-      series = list(list(
-        data = idt,
-        color = mcars_colors[[cc(x, y)]],
-        dataLabels = list(enabled = FALSE)
-      ))
-    ))
-}
-
-# labals and colors. 
-mcars_lables = c(
-  cyl = "Cylinders",
-  disp = "Displacement",
-  hp = "Horsepower",
-  drat = "Rear Axle Ratio",
-  wt = "Weight",
-  qsec = "1/4 Mile Time",
-  vs = "V/S",
-  am = "Transmission",
-  gear = "Gears",
-  carb = "Carburetors",
-  mpg = "Miles per Gallon"
-)
-
 # https://www.shutterstock.com/blog/101-color-combinations-design-inspiration?customer_ID=48606055&utm_medium=email&campaign_ID=shutters.12467865&utm_campaign=CORE-IMAGE-NEWSLETTER-CONTENT-march-_-fourtyfive&launch_ID=11181965&utm_source=sstkemail
 # 11. Color Whirl:
 # #E3A4A5
 # #BC5F6A
 # #19B3B1
 # #034b61
-mcars_colors = c(
-  cylhp = "#034b61",
-  hpmpg = "#19B3B1",
-  gearqsec = "#BC5F6A",
-  dispwt = "#E3A4A5"
-)
+make_chart_colors[['cylhp']] = "#034b61"
+make_chart_colors[['hpmpg']] = "#19B3B1"
+make_chart_colors[['gearqsec']] = "#BC5F6A"
+make_chart_colors[['dispwt']] = "#E3A4A5"
 
-# the charts themselves. 
-output$mtcars1 = renderUI({ hc_html('mtcars1', mtcars_chart('cyl', 'hp')) })
-output$mtcars2 = renderUI({ hc_html('mtcars2', mtcars_chart('hp', 'mpg')) })
-output$mtcars3 = renderUI({ hc_html('mtcars3', mtcars_chart('gear', 'qsec')) })
-output$mtcars4 = renderUI({ hc_html('mtcars4', mtcars_chart('disp', 'wt')) })
+make_chart_labels$cyl = "Cylinders"
+make_chart_labels$disp = "Displacement"
+make_chart_labels$hp = "Horsepower"
+make_chart_labels$drat = "Rear Axle Ratio"
+make_chart_labels$wt = "Weight"
+make_chart_labels$qsec = "1/4 Mile Time"
+make_chart_labels$vs = "V/S"
+make_chart_labels$am = "Transmission"
+make_chart_labels$gear = "Gears"
+make_chart_labels$carb = "Carburetors"
+make_chart_labels$mpg = "Miles per Gallon"
+
+output$mtcars1 = renderUI({ hc_html('mtcars1', make_chart(mtcars, 'cyl', 'hp')) })
+output$mtcars2 = renderUI({ hc_html('mtcars2', make_chart(mtcars, 'hp', 'mpg')) })
+output$mtcars3 = renderUI({ hc_html('mtcars3', make_chart(mtcars, 'gear', 'qsec')) })
+output$mtcars4 = renderUI({ hc_html('mtcars4', make_chart(mtcars, 'disp', 'wt')) })
