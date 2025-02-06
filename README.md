@@ -82,3 +82,10 @@ This project uses [hcslim](https://github.com/superchordate/hcslim/) to utilize 
 
 When breaking free of opinionated frameworks, it is much easier to write UI in HTML. This project uses HTML templates, saved in the `app/templates/` folder. More on this at https://shiny.posit.co/r/articles/build/templates/.
 
+**Personal Style**
+
+You'll notice I don't follow normal R conventions like using `<-` or modules, and seemingly random selection of `'` and `"` as a result of mixing AI results with my personal preference for `'` because it doesn't require the shift key. 
+
+Please bear with me on this and feel free to search and replace your own style. :relieved:
+
+Or, clean up my code in a PR. Though I can't guarantee I'll accept it. :pray:
