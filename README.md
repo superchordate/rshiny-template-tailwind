@@ -44,7 +44,7 @@ This project uses JS files directly, as opposed to packaging them into an R pack
 
 The Tailwind JS file is saved at `app/www/tailwind_3_4_3.js`. You can replace it with any Tailwind version you like. Any CSS or JS files in `app/www/` are automatically imported by `app/ui.R` and `uihead()`.
 
-Fonts are also downloaded, saved to `app/www/fonts/` and set up with `app/www/fonts/fonts.css`.
+I've also downloaded Fonts and saved them to `app/www/fonts/` and set up with `app/www/fonts/fonts.css`. Refer to `fonts.css` for info on how to add new fonts. 
 
 _To find JS files and CSS files that can be used in this way, find a CDN that provides them, visit the URL, and save the file to the app/www folder._
 

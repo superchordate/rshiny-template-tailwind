@@ -1,4 +1,6 @@
-/* import fonts from files */
+/* import fonts from files. 
+   these files can be downloaded from Google Fonts and must be saved in the app/www/fonts folder  
+*/
 @font-face {
     font-family: 'opensans-light';
     src: url('OpenSans-Light.ttf') format('truetype');
@@ -24,11 +26,12 @@
     src: url('OpenSans-ExtraBold.ttf') format('truetype');
 }
 
-
-/* set up CSS classes for use in Tailwind */
+/* then, set up CSS classes for use in Tailwind */
 .opensans-light { font-family: 'opensans-light'; }
 .opensans { font-family: 'opensans'; }
 .opensans-italic { font-family: 'opensans-italic'; }
 .opensans-medium { font-family: 'opensans-medium'; }
 .opensans-bold { font-family: 'opensans-bold'; }
 .opensans-extrabold { font-family: 'opensans-extrabold'; }
+
+/* now you can use these classes in your CSS! */
